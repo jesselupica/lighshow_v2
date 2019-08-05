@@ -18,7 +18,7 @@ case "$1" in
   start)
     echo "Starting lightshow"
     # run application you want to start
-    sh /home/pi/Public/lightshow_v2/init.sh
+    sh /home/pi/Public/lighshow_v2/init.sh
     ;;
   stop)
     echo "Stopping lightshow"
