@@ -23,7 +23,7 @@ if __name__ == '__main__':
     visualizer.add_stream_processor(RhythmBasedStreamProcessor())
 
     if is_pi():
-        visualzer.add_input_source(Stream())
+        visualizer.add_input_source(Stream())
         visualizer.add_output_source(PiGPIOPinOutputSource())
 
     else: 

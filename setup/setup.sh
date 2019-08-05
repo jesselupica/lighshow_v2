@@ -9,5 +9,6 @@ sudo apt-get install portaudio19-dev
 
 sudo pip3 install -r requirements.txt
 
-# # clean up
-# sudo rm -rf pyalsaaudio
+sudo chmod +x ../init.sh
+sudo chown root:root ../init.sh
+
