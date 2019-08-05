@@ -18,12 +18,12 @@ case "$1" in
   start)
     echo "Starting lightshow"
     # run application you want to start
-    sh /home/pi/Public/lightshow/init_lights.sh
+    sh /home/pi/Public/lightshow_v2/init.sh
     ;;
   stop)
     echo "Stopping lightshow"
     # kill application you want to stop
-    killall python
+    killall python3
     ;;
   *)
     echo "Usage: /etc/init.d/lightshow_setup.sh {start|stop}"
