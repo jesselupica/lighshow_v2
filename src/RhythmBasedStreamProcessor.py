@@ -93,14 +93,12 @@ class RhythmBasedStreamProcessor(StreamProcessorBase):
         self.mode_override = None
         self.color = Color()
 
+    def preprocess(self, input_stream):
+        self.stream_analyzer.analyze(input_stream)
 
     def process(self, input_stream):
-        # preprocess does processing that all process functions should do 
-        self.preprocess(input_stream)
         if self.mode_override is not None:
             return self.mode_override.get_values()
-
-        self.stream_analyzer.analyze(input_stream)
         hue, saturation, value = self.color.get_hsv()
         intensity = self.stream_analyzer.get_intensity()
         

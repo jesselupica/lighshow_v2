@@ -19,6 +19,7 @@ class Visualizer:
         try:
             while True:
                 raw_data = self.input_source_.get_chunk()
+                self.stream_processor_.preprocess(raw_data)
                 r, g, b = self.stream_processor_.process(raw_data)
                 self.output_source_.display(r, g, b)
 

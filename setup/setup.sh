@@ -9,6 +9,6 @@ sudo apt-get install portaudio19-dev
 
 sudo pip3 install -r requirements.txt
 
-sudo chmod +x ../init.sh
-sudo chown root:root ../init.sh
+sudo chmod +x ../run.sh
+sudo chown root:root ../run.sh
 

@@ -4,14 +4,14 @@ import wave
 import pyaudio
 
 STREAM_RATE = 44100
-CHUNK_SIZE = 1024
+CHUNK_SIZE = 2048
 
 class Stream(object):
     def __init__(self):
         p = pyaudio.PyAudio()
-        self.input_stream = p.open(format=pyaudio.paInt16, channels=1, rate=STREAM_RATE,
+        self.input_stream = p.open(format=pyaudio.paInt16, channels=2, rate=STREAM_RATE,
                             input=True,
-                            frames_per_buffer=CHUNK_SIZE)
+                            frames_per_buffer=CHUNK_SIZE*2)
 
     def get_chunk(self):
         try:
@@ -20,7 +20,8 @@ class Stream(object):
               	 sound_data.byteswap()
             return sound_data
         except IOError as e:
-            return None
+            print(e) 
+            return [0]*CHUNK_SIZE
 	    
 
 class FileStream(Stream):
